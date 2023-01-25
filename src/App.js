@@ -1,8 +1,6 @@
 import './App.css';
-import initialCards from './cards-data';
 import Player from './components/Player';
 import CardList from './components/CardList';
-import { useState } from 'react';
 import ExecutePassButton from './components/ExecutePassButton';
 import { useGameContext } from './context/GameContext.js';
 
@@ -57,7 +55,7 @@ function App() {
         <Player player={3} hand={playerThreeHand} />
         <CardList cards={deck} player={'deck'} />
       </section>
-      <section>{selectedCard && <ExecutePassButton passCard={passCard} cards={deck} />}</section>
+      <section>{selectedCard && <ExecutePassButton passCard={passCard} />}</section>
     </div>
   );
 }

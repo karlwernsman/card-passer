@@ -3,7 +3,7 @@ import { useGameContext } from '../context/GameContext.js';
 import CardList from './CardList';
 
 export default function Player({ player, hand }) {
-  const { selectedCard, setSelectedCard, to, setTo } = useGameContext();
+  const { to, setTo } = useGameContext();
   return (
     <div
       className={`player ${to === player ? 'selected-player' : ''}`}
