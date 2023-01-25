@@ -19,8 +19,8 @@ function App() {
     playerThreeHand,
     setPlayerThreeHand,
     from,
+    to,
   } = useGameContext();
-  const [to, setTo] = useState(1);
 
   function findCardIndex(value, suit, cards) {
     return cards.findIndex((card) => card.value === value && card.suit === suit);
@@ -52,14 +52,12 @@ function App() {
     <div className="App">
       <section>
         {/* if the player names are numbers, that will make our life easier later because we can reuse numbers as arrays. Note that this will make our app brittle! */}
-        <Player to={to} player={1} hand={playerOneHand} setTo={setTo} />
-        <Player to={to} player={2} hand={playerTwoHand} setTo={setTo} />
-        <Player to={to} player={3} hand={playerThreeHand} setTo={setTo} />
+        <Player to={to} player={1} hand={playerOneHand} />
+        <Player to={to} player={2} hand={playerTwoHand} />
+        <Player to={to} player={3} hand={playerThreeHand} />
         <CardList cards={deck} player={'deck'} />
       </section>
-      <section>
-        {selectedCard && <ExecutePassButton passCard={passCard} to={to} cards={deck} />}
-      </section>
+      <section>{selectedCard && <ExecutePassButton passCard={passCard} cards={deck} />}</section>
     </div>
   );
 }
