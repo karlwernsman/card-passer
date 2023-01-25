@@ -6,6 +6,8 @@ const GameContext = createContext();
 const GameProvider = ({ children }) => {
   const [deck, setDeck] = useState(initialCards);
   const [playerOneHand, setPlayerOneHand] = useState([]);
+  const [playerTwoHand, setPlayerTwoHand] = useState([]);
+  const [playerThreeHand, setPlayerThreeHand] = useState([]);
 
   return (
     <GameContext.Provider
@@ -14,6 +16,10 @@ const GameProvider = ({ children }) => {
         setDeck,
         playerOneHand,
         setPlayerOneHand,
+        playerTwoHand,
+        setPlayerTwoHand,
+        playerThreeHand,
+        setPlayerThreeHand,
       }}
     >
       {children}

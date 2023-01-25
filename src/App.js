@@ -10,8 +10,8 @@ function App() {
   const { deck, setDeck } = useGameContext();
   const { playerOneHand, setPlayerOneHand } = useGameContext();
   const [selectedCard, setSelectedCard] = useState();
-  const [playerTwoHand, setPlayerTwoHand] = useState([]);
-  const [playerThreeHand, setPlayerThreeHand] = useState([]);
+  const { playerTwoHand, setPlayerTwoHand } = useGameContext();
+  const { playerThreeHand, setPlayerThreeHand } = useGameContext();
   const [from, setFrom] = useState('deck');
   const [to, setTo] = useState(1);
 
