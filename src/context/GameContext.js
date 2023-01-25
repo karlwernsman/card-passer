@@ -8,6 +8,7 @@ const GameProvider = ({ children }) => {
   const [playerOneHand, setPlayerOneHand] = useState([]);
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
+  const [selectedCard, setSelectedCard] = useState();
 
   return (
     <GameContext.Provider
@@ -20,6 +21,8 @@ const GameProvider = ({ children }) => {
         setPlayerTwoHand,
         playerThreeHand,
         setPlayerThreeHand,
+        selectedCard,
+        setSelectedCard,
       }}
     >
       {children}
